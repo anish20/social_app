@@ -1,5 +1,5 @@
 import Login from "./pages/login/Login";
-import './app.css'
+import './styles.scss'
 import Register from "./pages/register/Register";
 import {
   createBrowserRouter,
@@ -12,16 +12,24 @@ import LeftBar from "./components/leftbar/LeftBar";
 import RightBar from "./components/rightbar/RightBar";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
+import { useContext } from "react";
+import { darkModeContext } from "./context/darkModeContext";
+import { AuthContext } from "./context/authContext";
 
 function App() {
-  const currentUser=true;
+  const {currentUser}=useContext(AuthContext);
+  const {darkMode}=useContext(darkModeContext);
+  console.log("kyyyya",darkMode)
   const Layout=()=>{
     return(
-      <div>
+      <div className={`theme-${darkMode ? "dark" :"light"}`}>
         <NavBar />
         <div style={{display:"flex"}}>
           <LeftBar />
-            <Outlet />
+          <div style={{flex:6}}> 
+          <Outlet />
+          </div>
+          
           <RightBar />
         </div>
       </div>

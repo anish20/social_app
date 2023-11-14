@@ -1,10 +1,18 @@
+@import "../../styles.scss";
 .navbar{
+    @include themify($themes){
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 25px;
-    height: 60px;
-    border-bottom: 1px solid lightgray;
+    padding: 10px 20px;
+    height: 50px;
+    border-bottom: 1px solid themed("border");;
+    position: sticky;
+    top: 0;
+    background: themed("bg");
+    color: themed("textColor");
+    z-index: 999999;
+    width: 100%;
     .left{
         display: flex;
         align-items: center;
@@ -12,32 +20,47 @@
         span{
             font-weight: bold;
             font-size: 20px;
-            color: darkblue;
+            color: themed("logo");
             }   
         .search{
             display: flex;
             align-items: center;
             gap: 10px;
-            border: 1px solid lightgray;
+            border: 1px solid themed("border");
             border-radius: 5px;
             padding: 5px;
             input{
                 border: none;
                 width: 500px;
+                background-color: transparent;
+                color: themed("textColor");
                 &:focus{
                     outline: none;
+                }
+                @include mobile{
+                    display: none;
+                }
+                @include tablet{
+                   width: 200px;
                 }
             }
         }
     }
     .right{
+       
        display: flex;
        align-items: center;
        gap: 20px;
+       @include mobile{
+        display: none;
+    }
         .user{
             display: flex;
             align-items: center;
             gap: 10px;
+            @include tablet{
+                display: none;
+            }
             img{
               width: 25px;
               height: 25px;  
@@ -48,5 +71,8 @@
 
             }
         }
+        
     }
+}
+
 }
