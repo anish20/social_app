@@ -24,7 +24,7 @@ function App() {
     return(
       <div className={`theme-${darkMode ? "dark" :"light"}`}>
         <NavBar />
-        <div style={{display:"flex"}}>
+        <div className="contentBox">
           <LeftBar />
           <div style={{flex:6}}> 
           <Outlet />

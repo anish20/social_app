@@ -9,6 +9,16 @@ body{
     font-family: 'Mulish', sans-serif;
 }
 
+.contentBox{
+  display: flex;
+}
+@media (max-width:480px) {
+  .contentBox{
+    display: block;
+  }  
+}
+
+
 $themes:(
     light:(
         textColor:#000,
