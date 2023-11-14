@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -10,8 +10,10 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import  './Profile.scss'
 import Posts from '../../components/posts/Posts';
+import { AuthContext } from '../../context/authContext';
 
 function Profile() {
+  const {currentUser}=useContext(AuthContext);
   return (
     <div className='profile'>
       <div className="images">
@@ -21,7 +23,7 @@ function Profile() {
           className="cover"
         />
         <img
-          src="https://images.pexels.com/photos/14028501/pexels-photo-14028501.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          src={currentUser && currentUser.profilePic}
           alt=""
           className="profilePic"
         />
@@ -46,15 +48,15 @@ function Profile() {
             </a>
           </div>
           <div className="center">
-            <span>Jane Doe</span>
+            <span>{currentUser && currentUser.name}</span>
             <div className="info">
               <div className="item">
                 <PlaceIcon />
-                <span>USA</span>
+                <span>India</span>
               </div>
               <div className="item">
                 <LanguageIcon />
-                <span>lama.dev</span>
+                <span>anishinfo.com</span>
               </div>
             </div>
             <button>follow</button>
