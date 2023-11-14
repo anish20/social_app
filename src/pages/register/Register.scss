@@ -1,3 +1,4 @@
+@import "../../styles.scss";
 .register{
     width: 100vw;
     height: 100vh;
@@ -5,6 +6,9 @@
     justify-content: center;
     align-items: center;
     background: linear-gradient(90deg, hsla(225, 51%, 55%, 1) 0%, hsla(231, 63%, 79%, 1) 92%);
+    @include mobile{
+        background: transparent;
+    }
     .cards{
         display: flex;
         flex-direction: row-reverse;
@@ -13,8 +17,15 @@
         border-radius: 10px;
         min-height: 600px;
         overflow: hidden;
+        @include mobile{
+           flex-direction: column;
+           width: 100%;
+        }
         .left{
             flex: 1;
+            @include mobile{
+                flex: none;
+            }
             background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
         url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600") center;
         background-size: cover;
@@ -23,11 +34,21 @@
         flex-direction: column;
         gap: 30px;
         color: #fff;
-
+        @include mobile{
+            padding: 15px;
+           gap: 10px;
+          
+         
+        }
           
         h1{
             font-size: 100px;
             line-height: 100px;
+            @include mobile{
+                font-size: 50px;
+                line-height: 50px;
+             
+            }
             }
             p{
 
@@ -43,15 +64,26 @@
                 color: rebeccapurple;
                 cursor: pointer;
                 font-weight: bold;
+                @include mobile{
+                    width: 100%;
+                  
+                 
+                }
             }
         }
         .right{
             flex: 1;
+           
             padding: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             gap: 50px;
+            @include mobile{
+                flex: none;
+                padding: 20px;
+                gap: 20px;
+            }
             h1{
                 color: #555;
             }

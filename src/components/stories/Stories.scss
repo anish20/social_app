@@ -5,8 +5,7 @@
     height: 250px;
     margin-bottom: 30px;
     @include mobile{
-        height: 50px;
-        justify-content: space-between;
+        height: 50px !important;
     }
     @include tablet{
         height: 150px;

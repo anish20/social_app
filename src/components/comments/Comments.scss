@@ -52,9 +52,14 @@
             .date{
                 flex: 1;
                 font-size: 14px;
-                font-weight: 300;
+                // font-weight: 300;
                 align-self: center;
                 color: gray;
+                @include mobile{
+                    flex: none;
+                    align-self: unset;
+                    font-size: 12px;
+                }
             }
         }
 
