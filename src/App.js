@@ -15,7 +15,7 @@ import Profile from "./pages/profile/Profile";
 import { useContext } from "react";
 import { darkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
-
+// New qkdjqnwd wed 1kjd 
 function App() {
   const {currentUser}=useContext(AuthContext);
   const {darkMode}=useContext(darkModeContext);
